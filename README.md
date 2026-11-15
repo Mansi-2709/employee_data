@@ -97,9 +97,6 @@ These are analytical questions to investigate, not established causal findings.
 - Predictive relationships should not be interpreted as causal relationships.
 - Model performance and generalization depend on data quality, class distribution, preprocessing, and validation.
 
-## Repository
-
-**GitHub:** https://github.com/Mansi-2709/employee_data
 
 ---
 
