@@ -1,56 +1,106 @@
-# employee_data
-## About data
-## Columns Description
-Column Name	----------------Description
+# Employee Job Satisfaction Prediction | HR Analytics & Machine Learning
 
-EmpID	: Unique identifier for each employee.
+## Project Overview
 
-Gender	: Gender of the employee (e.g., Male, Female, Other).
+Employee job satisfaction is an important indicator of workforce well-being and organizational effectiveness. Understanding the factors associated with employee satisfaction can help organizations identify workplace conditions that may require attention and make more informed HR decisions.
 
-Age	: Age of the employee.
+This project uses employee-level data to develop a **machine learning classification model that predicts job satisfaction on a scale of 1 to 5**.
 
-MaritalStatus	: Marital status of the employee (e.g., Single, Married, Divorced, Widowed).
+A Decision Tree algorithm is used to examine relationships between employee characteristics, workplace conditions, and reported job satisfaction.
 
-JobLevel	: Job level of the employee (e.g., Intern/Fresher, Junior, Mid, Senior, Lead).
+The project explores how factors such as workload, stress, work-life balance, work environment, commute distance, sleep, and professional experience can be used as predictors of employee job satisfaction.
 
-Experience	: Number of years of work experience the employee has.
+## Project Objective
 
-Dept :	Department where the employee works (e.g., IT, HR, Finance, Marketing, Sales, Legal, Operations, Customer Service).
+The primary objective is to predict an employee's job satisfaction rating using available demographic, professional, and workplace-related attributes.
 
-EmpType	: Type of employment (e.g., Full-Time, Part-Time, Contract).
+The project focuses on:
 
-WLB	: Work-life balance rating (scale from 1 to 5).
+- Exploring employee demographics and professional characteristics.
+- Understanding workplace and lifestyle factors represented in the dataset.
+- Using employee attributes as input features for a classification model.
+- Applying a Decision Tree algorithm to predict job satisfaction levels.
+- Exploring the potential application of predictive analytics in HR decision-making.
 
-WorkEnv	: Work environment rating (scale from 1 to 5).
+## Dataset Description
 
-PhysicalActivityHours	: Number of hours of physical activity per week.
+The dataset was obtained from Kaggle and contains employee-level information covering demographic characteristics, employment details, workplace conditions, lifestyle factors, and job satisfaction.
 
-Workload	: Workload rating (scale from 1 to 5).
+**Target Variable:** `JobSatisfaction`
 
-Stress :	Stress level rating (scale from 1 to 5).
+The target variable represents employee-reported job satisfaction on a scale of 1 to 5.
 
-SleepHours :	Number of hours of sleep per night.
+### Data Dictionary
 
-CommuteMode :	Mode of commute (e.g., Car, Public Transport, Bike, Walk, Motorbike).
+| Category | Columns | Description |
+|---|---|---|
+| Employee demographics | EmpID, Gender, Age, MaritalStatus | Employee identifier and demographic attributes |
+| Professional background | JobLevel, Experience, Dept, EmpType, NumCompanies | Job seniority, experience, department, employment type, and previous employers |
+| Work structure | TeamSize, NumReports, EduLevel | Team size, number of direct reports, and education level |
+| Workplace conditions | WLB, WorkEnv, Workload, Stress, haveOT | Work-life balance, work environment, workload, stress, and overtime |
+| Lifestyle and commute | PhysicalActivityHours, SleepHours, CommuteMode, CommuteDistance | Physical activity, sleep, commute method, and commute distance |
+| Employee development | TrainingHoursPerYear | Annual employee training hours |
+| Target variable | JobSatisfaction | Employee job satisfaction rating from 1 to 5 |
 
-CommuteDistance :	Distance traveled during the commute (in kilometers).
+## Methodology
 
-NumCompanies	: Number of different companies the employee has worked for.
+### 1. Dataset Understanding
 
-TeamSize :	Size of the team the employee is part of.
+The dataset contains a combination of categorical and numerical variables describing employees and their working conditions.
 
-NumReports	: Number of people reported to by the employee (only applicable for Senior and Lead levels).
+The first stage involves understanding the available attributes and identifying their relevance to the prediction objective.
 
-EduLevel :	Highest level of education achieved by the employee (e.g., High School, Bachelor, Master, PhD).
+### 2. Feature Selection
 
-haveOT	: Indicator if the employee has overtime (True/False).
+Employee demographics, professional experience, workplace conditions, and lifestyle-related attributes serve as potential predictors.
 
-TrainingHoursPerYear	: Number of hours of training received per year.
+`JobSatisfaction` is the target variable for the classification task.
 
-JobSatisfaction :	Rating of job satisfaction (scale from 1 to 5).
+`EmpID` is an employee identifier rather than a meaningful predictive attribute and should not be treated as a model feature.
 
-## Project Description
+### 3. Model Development
 
-I have built a machine learning model to predict the Job Satisfaction of the employees given data such as Age, Experience, Workload, Stress, Commute distance, using Decision Tree Algorithm. Employees had to rate their Job Satisfaction level on a scale of 1 to 5. The data has been taken from Kaggle.
+A **Decision Tree Classifier** is used to predict employee job satisfaction.
 
+Decision Trees are suitable for classification problems involving numerical and categorical predictors after appropriate preprocessing. They also provide an interpretable structure through decision rules and feature-based splits.
 
+### 4. Prediction Objective
+
+The model predicts one of five job satisfaction levels, corresponding to the ratings recorded in the dataset.
+
+The predictions can potentially help identify employee groups or workplace factors that deserve further investigation.
+
+## Technology Stack
+
+- **Python** – Data analysis and machine learning
+- **Pandas** – Data manipulation
+- **NumPy** – Numerical operations
+- **Scikit-learn** – Decision Tree classification and model development
+- **Kaggle** – Dataset source
+
+## Potential HR Applications
+
+The prediction framework can support further investigation into:
+
+- The relationship between workload and employee satisfaction.
+- The association between stress and job satisfaction.
+- The role of work-life balance and workplace environment.
+- Whether commute-related factors are associated with satisfaction levels.
+- How professional experience and job level relate to employee satisfaction.
+
+These are analytical questions to investigate, not established causal findings.
+
+## Project Limitations
+
+- Predictions are based on the variables available in the dataset.
+- Employee-reported satisfaction ratings may involve subjective responses.
+- Predictive relationships should not be interpreted as causal relationships.
+- Model performance and generalization depend on data quality, class distribution, preprocessing, and validation.
+
+## Repository
+
+**GitHub:** https://github.com/Mansi-2709/employee_data
+
+---
+
+*This project demonstrates the application of supervised machine learning to an HR analytics problem, using employee attributes to predict job satisfaction.*
